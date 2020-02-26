@@ -2,7 +2,7 @@
 
 本文的目的主要是协助交易所上线GKM交易。
 
-github: https://github.com/dto-simba/vxx-chain 
+github: https://github.com/gkmchain/gkmchain 
 
 ## 基本概念
 
@@ -17,7 +17,7 @@ GKM的账户体系采用了UTXO模型。
 
 ### 安装
 
- 下载对应linux版本的可执行程序: https://github.com/dto-simba/vxx-chain
+ 下载对应linux版本的可执行程序: https://github.com/gkmchain/gkmchain
 
  解压ubuntu-14/16/18.zip，使用terminal命令窗口使用gkmd/gkm-cli执行程序
  如若您想更方便的运行程序，可将可执行程序拷贝到/usr/lib下，并对其使用chmod赋权，即可在任何目录使用gkmd/gkm-cli程序
@@ -44,7 +44,7 @@ GKM的账户体系采用了UTXO模型。
 
 ### 安装
 
- 下载 https://github.com/dto-simba/vxx-chain
+ 下载 https://github.com/gkmchain/gkmchain
  解压 mac.zip并进入
  使用terminal命令窗口使用gkmd/gkm-cli执行程序
 
@@ -71,7 +71,7 @@ GKM的账户体系采用了UTXO模型。
 
 ### 安装
 
- 下载 https://github.com/dto-simba/vxx-chain
+ 下载 https://github.com/gkmchain/gkmchain
  解压 win.zip并进入
  使用cmd命令窗口使用gkmd.exe/gkm-cli.exe执行程序
 

@@ -2,7 +2,7 @@
 
 The purpose of this article is mainly to assist the exchange on the line GKM transactions.
 
-github: https://github.com/dto-simba/vxx-chain  
+github: https://github.com/gkmchain/gkmchain  
 
 ## Basic concepts
 
@@ -16,7 +16,7 @@ The GKM account system uses the UTXO model.
 
  Download the executable program for the linux version:
 
- https://github.com/dto-simba/vxx-chain 
+ https://github.com/gkmchain/gkmchain 
 
 
   Execute the program using gkmd/gkm-cli using the terminal command window
@@ -44,7 +44,7 @@ The GKM account system uses the UTXO model.
 
 #### Install
 
- Download  https://github.com/dto-simba/vxx-chain
+ Download  https://github.com/gkmchain/gkmchain
  Unzip mac.zip and enter
  Execute the program using gkmd/gkm-cli using the terminal command window
 
@@ -71,7 +71,7 @@ The GKM account system uses the UTXO model.
 
 #### Install
 
-Download https://github.com/dto-simba/vxx-chain
+Download https://github.com/gkmchain/gkmchain
 Unzip win.zip and enter
 Execute the program using gkmd.exe/gkm-cli.exe using the cmd command window
 
