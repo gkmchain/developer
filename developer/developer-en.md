@@ -6,7 +6,7 @@ GKM provides a simple, efficient, and rich API to help developers develop and in
 
 ## 2.1 Available API directives
 
-The way to invoke the command gkm-cli (command), such as gkm-cli help.
+The way to invoke the command gkmcore-cli (command), such as gkmcore-cli help.
 
 #### help
 > Method description
@@ -1496,7 +1496,7 @@ Response complete: true, hexadecimal hex field HEX2. This means that the transac
 
 ## JSON RPC configuration
 
-The RPC username and password are stored in the ~/.gkm/gkm.conf(linux/MAC) or %APPDATA%\.gkm\gkm.conf(Windows) file. You can use the gkm-cli command line tool or the gkmcore GUI. The built-in CLI interface of the tool (PC wallet), these tools will automatically read the RPC username and password and connect to the running blockchain, please do not open the rpc port to the external network.
+The RPC username and password are stored in the ~/.gkm/gkm.conf(linux/MAC) or %APPDATA%\.gkm\gkm.conf(Windows) file. You can use the gkmcore-cli command line tool or the gkmcore GUI. The built-in CLI interface of the tool (PC wallet), these tools will automatically read the RPC username and password and connect to the running blockchain, please do not open the rpc port to the external network.
 
 > Command mode operation：
 

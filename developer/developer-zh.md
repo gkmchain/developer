@@ -6,7 +6,7 @@ GKM提供了一个简单、高效的、丰富的API，帮助开发者在GKM中�
 
 ## 2.1 可用API指令
 
-调用命令的方式 gkm-cli (command),例如gkm-cli help.
+调用命令的方式 gkmcore-cli (command),例如gkmcore-cli help.
 
 #### help
 > 方法说明
@@ -1498,7 +1498,7 @@ GKM使用“ x/y ” 多签地址，定义为:给定y个常规地址，至少对
 
 ##  JSON RPC配置
 
-RPC用户名密码存储在~/.gkm/gkm.conf（linux/MAC）或%APPDATA%\gkm\gkm.conf（Windows）文件中,可以使用gkm-cli命令行工具或者gkm GUI工具(PC端钱包)内置的CLI界面连接，这些工具会自动读取RPC用户名密码并连接至已运行区块链,请不要将rpc port开放到外网。
+RPC用户名密码存储在~/.gkm/gkm.conf（linux/MAC）或%APPDATA%\gkm\gkm.conf（Windows）文件中,可以使用gkmcore-cli命令行工具或者gkm GUI工具(PC端钱包)内置的CLI界面连接，这些工具会自动读取RPC用户名密码并连接至已运行区块链,请不要将rpc port开放到外网。
 
 > 命令方式运行：
 
