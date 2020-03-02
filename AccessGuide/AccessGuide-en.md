@@ -19,25 +19,25 @@ The GKM account system uses the UTXO model.
  https://github.com/gkmchain/gkmchain 
 
 
-  Execute the program using gkmd/gkm-cli using the terminal command window
-  If you want to run the program more conveniently, you can copy the executable to /usr/lib and use chmod to delegate it, you can use the gkmd/gkm-cli program in any directory.
+  Execute the program using gkmcored/gkmcore-cli using the terminal command window
+  If you want to run the program more conveniently, you can copy the executable to /usr/lib and use chmod to delegate it, you can use the gkmcored/gkmcore-cli program in any directory.
 
 #### Start
 
-` ./gkmd` 
+` ./gkmcored` 
 
 #### CLI  management node
 
-` ./gkm-cli command `
+` ./gkmcore-cli command `
 
 #### Stop
 
-` ./gkm-cli stop `
+` ./gkmcore-cli stop `
 
 #### Connect to the specified node at startup
 
 ```bash
-./gkmd -addnode=ip:port
+./gkmcored -addnode=ip:port
 ```
 
 ## Mac node deployment
@@ -46,24 +46,24 @@ The GKM account system uses the UTXO model.
 
  Download  https://github.com/gkmchain/gkmchain
  Unzip mac.zip and enter
- Execute the program using gkmd/gkm-cli using the terminal command window
+ Execute the program using gkmcored/gkmcore-cli using the terminal command window
 
 #### Start
 
-` ./gkmd` 
+` ./gkmcored` 
 
 #### CLI interactive mode management node
 
-` ./gkm-cli command `
+` ./gkmcore-cli command `
 
 #### Stop
 
-` ./gkm-cli stop `
+` ./gkmcore-cli stop `
 
 #### Connect to the specified node at startup
 
 ```
-./gkmd -addnode=ip:port
+./gkmcored -addnode=ip:port
 ```
 
 
@@ -73,30 +73,30 @@ The GKM account system uses the UTXO model.
 
 Download https://github.com/gkmchain/gkmchain
 Unzip win.zip and enter
-Execute the program using gkmd.exe/gkm-cli.exe using the cmd command window
+Execute the program using gkmcored.exe/gkmcore-cli.exe using the cmd command window
 
 #### Start
 
-` gkmd.exe ` 
+` gkmcored.exe ` 
 
 #### CLI interactive mode management node
 
-` gkm-cli.exe command `
+` gkmcore-cli.exe command `
 
 #### Stop
 
-` gkm-cli.exe stop `
+` gkmcore-cli.exe stop `
 
 #### Connect to the specified node at startup
 
 ```
-gkmd.exe -addnode=ip:port
+gkmcored.exe -addnode=ip:port
 ```
 
 After startup, the sync block will start and the RPC service will be started (how to use the command to view the developer guide documentation).
 
 ## Node startup important parameters
-The parameter is incremented after gkmd with a - followed by the parameter name = parameter value
+The parameter is incremented after gkmcored with a - followed by the parameter name = parameter value
 
 Storage directory
 
@@ -131,7 +131,7 @@ Each time a new block is generated, the specified shell command is triggered, wh
 E.g:
 
 ```bash
-./gkmd  -datadir=/data/.gkm -port=6513 -rpcport=6512 -blocknotify=‘curl http://xxx.xx.x.xxx:8080/gkm?blockHash=%s'
+./gkmcored  -datadir=/data/.gkm -port=6513 -rpcport=6512 -blocknotify=‘curl http://xxx.xx.x.xxx:8080/gkm?blockHash=%s'
 ```
 
 After the chain is started, the startup parameters can be written to the conf configuration file. The configuration file is located at /data/.gkm/gkm.conf.
@@ -189,7 +189,7 @@ There are a way to generate a recharge address:
   Call the following command:
 
   ```bash
-  ./gkm-cli getnewaddress
+  ./gkmcore-cli getnewaddress
   ```
 
   The created address will be imported directly into the wallet file.
@@ -199,7 +199,7 @@ There are a way to generate a recharge address:
   Check the validity of the account address by calling the following command:
 
   ```bash
-./gkm-cli validateaddress (address)
+./gkmcore-cli validateaddress (address)
   ```
 
   The returned results are as follows：
@@ -227,7 +227,7 @@ To monitor user recharge, first check the block synchronization status and parse
   Call the command as follows:
 
   ```bash
- ./gkm-cli getblock hash
+ ./gkmcore-cli getblock hash
   ```
 
 We use the UTXO model, and the exchange needs to parse the VOUT part of each TX, where value is the local asset, GKM, and token is the created asset. There are two ways to compare recharge information:
@@ -237,7 +237,7 @@ We use the UTXO model, and the exchange needs to parse the VOUT part of each TX,
 2. If there is an address belonging to the exchange in VOUT, first record the recharge record in the database, wait for several blocks to confirm and then modify the user balance. Note that you need to check the duplicate address in vin and vout to judge vout. Is the transfer behavior, the collection behavior or the change behavior.
 
    ```bash
-    ./gkm-cli getblock "0020d76cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx993f6a754756f0e"
+    ./gkmcore-cli getblock "0020d76cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx993f6a754756f0e"
    ```
 
 Return results:
@@ -288,13 +288,13 @@ In both cases, a transaction will be generated for the transfer of the address i
 
 ## Node encryption
 
-After encrypting the wallet or changing the wallet password using gkm-cli encryptwallet "password", the node will stop the service by itself. Please use gkmd to restart the encrypted node.
+After encrypting the wallet or changing the wallet password using gkmcore-cli encryptwallet "password", the node will stop the service by itself. Please use gkmcored to restart the encrypted node.
 
 ### Set the keypool size
 
 Keypool capacity will be reduced after node encryption, you can use
 
-      ./gkm-cli keypoolrefill [size]
+      ./gkmcore-cli keypoolrefill [size]
 
   Set the size of the keypool
 

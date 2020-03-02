@@ -19,25 +19,25 @@ GKM的账户体系采用了UTXO模型。
 
  下载对应linux版本的可执行程序: https://github.com/gkmchain/gkmchain
 
- 解压ubuntu-14/16/18.zip，使用terminal命令窗口使用gkmd/gkm-cli执行程序
- 如若您想更方便的运行程序，可将可执行程序拷贝到/usr/lib下，并对其使用chmod赋权，即可在任何目录使用gkmd/gkm-cli程序
+ 解压ubuntu-16+.zip，使用terminal命令窗口使用./gkmcore-cli执行程序
+ 如若您想更方便的运行程序，可将可执行程序拷贝到/usr/lib下，并对其使用chmod赋权，即可在任何目录使用./gkmcore-cli程序
 
 #### 启动
 
-` ./gkmd` 
+` ./gkmcored` 
 
 #### 执行命令
 
-` ./gkm-cli command `
+` ./gkmcore-cli command `
 
 #### 停止节点
 
-` ./gkm-cli stop `
+` ./gkmcore-cli stop `
 
 #### 启动时连接指定节点
 
 ```bash
-./gkmd -addnode=ip:port
+./gkmcored -addnode=ip:port
 ```
 
 ## mac 节点部署
@@ -46,24 +46,24 @@ GKM的账户体系采用了UTXO模型。
 
  下载 https://github.com/gkmchain/gkmchain
  解压 mac.zip并进入
- 使用terminal命令窗口使用gkmd/gkm-cli执行程序
+ 使用terminal命令窗口使用./gkmcore-cli执行程序
 
 #### 启动
 
-` ./gkmd` 
+` ./gkmcored` 
 
 #### 执行命令
 
-` ./gkm-cli command `
+` ./gkmcore-cli command `
 
 #### 停止节点
 
-` ./gkm-cli stop `
+` ./gkmcore-cli stop `
 
 #### 启动时连接指定节点
 
 ```
-./gkmd -addnode=ip:port
+./gkmcored -addnode=ip:port
 ```
 
 
@@ -73,30 +73,30 @@ GKM的账户体系采用了UTXO模型。
 
  下载 https://github.com/gkmchain/gkmchain
  解压 win.zip并进入
- 使用cmd命令窗口使用gkmd.exe/gkm-cli.exe执行程序
+ 使用cmd命令窗口使用gkmcored.exe/gkmcore-cli.exe执行程序
 
 #### 启动
 
-` gkmd.exe ` 
+` gkmcored.exe ` 
 
 #### 执行命令
 
-` gkm-cli.exe command `
+` gkmcore-cli.exe command `
 
 #### 停止节点
 
-` gkm-cli.exe stop `
+` gkmcore-cli.exe stop `
 
 #### 启动时连接指定节点
 
 ```
-gkmd.exe -addnode=ip:port
+gkmcored.exe -addnode=ip:port
 ```
 
 启动后将开始同步区块，同时启动RPC服务（如何使用命令可查看开发者指南文档）。
 
 ## 节点启动重要参数
-参数在gkmd 后增加 以-开头，后面跟参数名=参数值
+参数在gkmcored 后增加 以-开头，后面跟参数名=参数值
 
 存储目录
 
@@ -131,7 +131,7 @@ rpc命令端口
 例如:
 
 ```bash
-./gkmd  -datadir=/data/.gkm -port=6513 -rpcport=6512 -blocknotify='curl http://xxx.xx.x.xxx:8080/gkm?blockHash=%s'
+./gkmcored  -datadir=/data/.gkm -port=6513 -rpcport=6512 -blocknotify='curl http://xxx.xx.x.xxx:8080/gkm?blockHash=%s'
 ```
 
 链启动后可以将启动参数写到conf配置文件中，配置文件位于/data/.gkm/gkm.conf
@@ -191,7 +191,7 @@ getblockchaininfo
   调用如下命令：
 
   ```bash
-  ./gkm-cli getnewaddress
+  ./gkmcore-cli getnewaddress
   ```
 
   创建好的地址会直接导入到钱包文件中。
@@ -202,7 +202,7 @@ getblockchaininfo
   通过调用如下命令检测账户地址的有效性：
 
   ```bash
-./gkm-cli validateaddress (address)
+./gkmcore-cli validateaddress (address)
   ```
 
   返回结果如下：
@@ -230,7 +230,7 @@ getblockchaininfo
   调用命令如下：
 
   ```bash
- ./gkm-cli getblock hash
+ ./gkmcore-cli getblock hash
   ```
 
   我们采用了UTXO模型，交易所需要解析每个TX中的VOUT部分，其中value为本地资产即GKM,token为创建的资产。有两种方式比对充值信息：
@@ -239,7 +239,7 @@ getblockchaininfo
   2. 如果在VOUT中有属于交易所的地址，先在数据库中记录下充值记录，等待几个区块确认后再修改用户余额，注意此处需要检查vin和vout中的重复地址，判断vout中是转账行为、合并unspent行为还是找零行为。
 
   ```bash
- ./gkm-cli getblock "0020d76cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx993f6a754756f0e"
+ ./gkmcore-cli getblock "0020d76cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx993f6a754756f0e"
   ```
 
   返回结果：
@@ -292,14 +292,14 @@ getblockchaininfo
 
 ### 节点加密
 
-​	使用gkm-cli  encryptwallet "password" 对钱包进行加密或更改钱包密码后，节点会自行停止服务，请使用gkmd重启加密节点
+​	使用gkmcore-cli  encryptwallet "password" 对钱包进行加密或更改钱包密码后，节点会自行停止服务，请使用gkmcored重启加密节点
 
 ### 设置keypool大小
 
 ​	节点加密之后keypool容量会减小，可以使用
 
 ```
- ./gkm-cli keypoolrefill [size]
+ ./gkmcore-cli keypoolrefill [size]
 ```
 
  对进行keypool设置大小
